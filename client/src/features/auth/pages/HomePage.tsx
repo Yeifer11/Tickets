@@ -1,6 +1,13 @@
 import { Link } from "react-router-dom";
 import SplineScene from "./SplineScene";
 
+const repositoryUrl = "https://github.com/Yeifer11/Tickets";
+const cvBasePath = `${import.meta.env.BASE_URL}docs`;
+const cvLinks = [
+  { label: "CV Espanol", href: `${cvBasePath}/yeifer-castano-cv-es.pdf` },
+  { label: "CV English", href: `${cvBasePath}/yeifer-castano-cv-en.pdf` },
+];
+
 const HomePage = () => {
   return (
     <div className="min-h-screen overflow-hidden bg-stone-50 text-slate-950">
@@ -30,9 +37,24 @@ const HomePage = () => {
           </a>
         </nav>
 
-        <button className="hidden rounded-lg border border-stone-300 px-5 py-2 text-sm font-semibold text-slate-700 transition hover:border-slate-900 hover:text-slate-950 lg:block">
-          Download CV
-        </button>
+        <details className="relative">
+          <summary className="list-none rounded-lg border border-stone-300 px-5 py-2 text-sm font-semibold text-slate-700 transition hover:cursor-pointer hover:border-slate-900 hover:text-slate-950 [&::-webkit-details-marker]:hidden">
+            Download CV
+          </summary>
+          <div className="absolute right-0 z-20 mt-2 w-44 rounded-lg border border-stone-200 bg-white p-2 shadow-xl shadow-slate-200/70">
+            {cvLinks.map((cv) => (
+              <a
+                key={cv.href}
+                href={cv.href}
+                target="_blank"
+                rel="noreferrer"
+                className="block rounded-md px-3 py-2 text-sm font-medium text-slate-600 transition hover:bg-stone-100 hover:text-slate-950"
+              >
+                {cv.label}
+              </a>
+            ))}
+          </div>
+        </details>
       </header>
 
       <main className="relative mx-auto grid min-h-[calc(100vh-210px)] max-w-7xl grid-cols-1 items-center justify-items-center gap-10 px-6 py-8 lg:grid-cols-2 lg:px-16">
@@ -80,7 +102,9 @@ const HomePage = () => {
             </Link>
 
             <a
-              href="https://github.com/salavarrietasol/opsflow.git"
+              href={repositoryUrl}
+              target="_blank"
+              rel="noreferrer"
               className="flex-1 rounded-lg border border-stone-300 bg-white px-7 py-4 text-center text-sm font-bold text-slate-700 transition hover:border-slate-900 hover:text-slate-950"
             >
               View Code
