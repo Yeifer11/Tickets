@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createHashRouter } from "react-router-dom";
 import LoginPage from "../features/auth/pages/LoginPage";
 import DashboardPage from "../features/dashboard/pages/DashboardPage";
 import TicketsPage from "../features/tickets/pages/TicketsPage";
@@ -7,7 +7,7 @@ import TicketDetailPage from "../features/tickets/pages/TicketDetailPage";
 import EditTicketPage from "../features/tickets/pages/EditTicketPage";
 import HomePage from  "../features/auth/pages/HomePage";
 
-export const router = createBrowserRouter([
+export const router = createHashRouter([
   {
     path: "/",
     element: <HomePage />,
@@ -36,6 +36,4 @@ export const router = createBrowserRouter([
     path: "/tickets/:id",
     element: <TicketDetailPage />,
   },
-], {
-  basename: import.meta.env.BASE_URL,
-});
+]);
