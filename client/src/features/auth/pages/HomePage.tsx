@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import SplineScene from "./SplineScene";
 
 const repositoryUrl = "https://github.com/Yeifer11/Tickets";
-const cvBasePath = `${import.meta.env.BASE_URL}docs`;
+const cvBasePath = "/Tickets/docs";
 const cvLinks = [
   { label: "CV Espanol", href: `${cvBasePath}/yeifer-castano-cv-es.pdf` },
   { label: "CV English", href: `${cvBasePath}/yeifer-castano-cv-en.pdf` },
@@ -38,7 +38,7 @@ const HomePage = () => {
         </nav>
 
         <details className="relative">
-          <summary className="list-none rounded-lg border border-stone-300 px-5 py-2 text-sm font-semibold text-slate-700 transition hover:cursor-pointer hover:border-slate-900 hover:text-slate-950 [&::-webkit-details-marker]:hidden">
+          <summary className="list-none rounded-lg border border-stone-300 px-5 py-2 text-sm font-semibold text-slate-700 transition hover:cursor-pointer hover:border-slate-900 hover:text-slate-950">
             Download CV
           </summary>
           <div className="absolute right-0 z-20 mt-2 w-44 rounded-lg border border-stone-200 bg-white p-2 shadow-xl shadow-slate-200/70">
